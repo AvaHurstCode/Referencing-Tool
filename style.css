@@ -21,7 +21,7 @@ Conventions I'd like to stick to:
 
 /* Body */
 body {
-    display: flex; /* Not sure if necessary but might be useful */
+    background-color: var(--background);
 }
 
 /* Navigation Bar - General */
@@ -61,4 +61,29 @@ nav .active {
 }
 nav .active a {
 	color: var(--accent);
+}
+
+/* Main Content - Global */
+
+/* Main Content - Homepage */
+.home {
+    display: flex;
+}
+/* Header */
+.home header{
+    font-size: 1.7rem;
+    color: var(--headers);
+	margin-top: 8rem;
+	margin-left: 6.5rem;
+	margin-right: 6.5rem;
+}
+.home header h1 {
+	font-size: 6rem;
+	font-weight: 500;
+	width: min(47rem, 100%);
+}
+.home header p {
+	padding-left: 0.4rem;
+	padding-top: 3.5rem;
+	width: min(30rem, 100%);
 }
