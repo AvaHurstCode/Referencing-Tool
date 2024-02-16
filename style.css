@@ -1,14 +1,25 @@
+/*
+Conventions I'd like to stick to:
+- Comment EVERYTHING (where sensible)
+- Relative units for most scaling values (mostly rem and %)
+- Colour in Hue Saturation Luminance format (for easy adjustment of monochromatic colour scheme)
+- Flex boxes! (for easy management of content allignment and stuff)
+*/
+/* Body */
+body {
+    display: flex; /* Not sure if necessary but might be useful */
+}
 /* Navigation Bar */
 nav {
-	position: fixed;
-	top: 0;
+	position: fixed; /* Do not change position when scrolling */
+	top: 0; /* Lock to top of page */
 	width: 100%;
-	font-size: 1.3rem;
+	font-size: 1.3rem; /* Idk if this is the best way to do this? */
 	background-color: hsl(201, 50%, 7%);
 }
 nav ul {
     display: flex;
-    justify-content: left;
+    justify-content: left; /* Make list start at the left of the screen */
 }
 nav li {
 	text-align: center;
@@ -16,7 +27,7 @@ nav li {
 nav a {
     color: hsl(201, 50%, 40%);
     text-decoration: none;
-	display: block;
+	display: block; /* Force box to take up entire container for easier clicking */
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
 	padding-top: 0.5rem;
