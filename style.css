@@ -2,20 +2,35 @@
 Conventions I'd like to stick to:
 - Comment EVERYTHING (where sensible)
 - Relative units for most scaling values (mostly rem and %)
-- Colour in Hue Saturation Luminance format (for easy adjustment of monochromatic colour scheme)
+- Colours all taken from variables set up in root (easy global colour scheme changes!!)
 - Flex boxes! (for easy management of content allignment and stuff)
+- Seperate different "objects" with empty lines (e.g.: all navbar sections together, but a line away from all body sections)
 */
+
+/* Colour Scheme Setup */
+:root {
+	--h: 200; /* Hue */
+	--s: 50%; /* Sauration */
+	--background: hsl(var(--h), var(--s), 10%);
+	--headers: hsl(var(--h), var(--s), 42%);
+	--navbar: hsl(var(--h), var(--s), 6%);
+	--nav-hover: hsl(var(--h), var(--s), 3%);
+	--accent: hsl(0, 0%, 85%);
+	--unselected: hsl(var(--h), var(--s), 42%)
+}
+
 /* Body */
 body {
     display: flex; /* Not sure if necessary but might be useful */
 }
-/* Navigation Bar */
+
+/* Navigation Bar - General */
 nav {
 	position: fixed; /* Do not change position when scrolling */
 	top: 0; /* Lock to top of page */
 	width: 100%;
 	font-size: 1.3rem; /* Idk if this is the best way to do this? */
-	background-color: hsl(201, 50%, 7%);
+	background-color: var(--navbar);
 }
 nav ul {
     display: flex;
@@ -25,11 +40,25 @@ nav li {
 	text-align: center;
 }
 nav a {
-    color: hsl(201, 50%, 40%);
+    color: var(--headers);
     text-decoration: none;
 	display: block; /* Force box to take up entire container for easier clicking */
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
+}
+/* Navigation Bar - Hover */
+nav li:hover:not(.active, .icon) {
+	background-color: var(--nav-hover);
+}
+nav li:hover:not(.active, .icon) a {
+	color: var(--accent);
+}
+/* Navigation Bar - Active */
+nav .active {
+	background-color: var(--headers);
+}
+nav .active a {
+	color: var(--accent);
 }
