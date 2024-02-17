@@ -7,8 +7,8 @@ Conventions I'd like to stick to:
 - Seperate different "objects" with empty lines (e.g.: all navbar sections together, but a line away from all body sections)
 */
 
-/* Colour Scheme Setup */
 :root {
+    /* Colour Scheme Setup */
 	--h: 200; /* Hue */
 	--s: 50%; /* Sauration */
 	--background: hsl(var(--h), var(--s), 10%);
@@ -16,7 +16,9 @@ Conventions I'd like to stick to:
 	--navbar: hsl(var(--h), var(--s), 6%);
 	--nav-hover: hsl(var(--h), var(--s), 3%);
 	--accent: hsl(0, 0%, 85%);
-	--unselected: hsl(var(--h), var(--s), 42%)
+	--unselected: hsl(var(--h), var(--s), 42%);
+    /* constants */
+    --navbar-height: 1.3rem;
 }
 
 /* Body */
@@ -28,7 +30,7 @@ body {
 nav {
 	position: fixed; /* Do not change position when scrolling */
 	width: 100%;
-	font-size: 1.3rem; /* Idk if this is the best way to do this? */
+	font-size: var(--navbar-height); /* Idk if this is the best way to do this? */
 	background-color: var(--navbar);
     box-shadow: 0 0 1rem 0rem rgba(0, 0, 0, 0.5); /* Doesn't need to follow colour scheme as it's a shadow */
 }
@@ -38,6 +40,7 @@ nav ul {
 }
 nav li {
 	text-align: center;
+    transition: all 0.15s ease-in-out;
 }
 nav a {
     color: var(--headers);
@@ -47,10 +50,12 @@ nav a {
 	padding-right: 1.5rem;
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
+    transition: all 0.15s ease-in-out;
 }
 /* Navigation Bar - Hover */
 nav li:hover:not(.active, .icon) {
 	background-color: var(--nav-hover);
+    box-shadow: 0 0 1rem 0rem rgba(0, 0, 0, 0.8);
 }
 nav li:hover:not(.active, .icon) a {
 	color: var(--accent);
@@ -93,11 +98,15 @@ main {
 	padding-top: 3.5rem;
 	width: min(30rem, 100%);
 }
-/* Login Button */
-.home header a{
+/* Buttons */
+.home-buttons {
+    display: flex;
+    padding-top: 2.9rem;
+}
+.home-buttons a {
     width: fit-content;
     height: fit-content;
-    margin-top: 2.9rem;
+    margin-right: 1rem;
 }
 .login {
 	background-color: var(--headers);
@@ -108,15 +117,33 @@ main {
 	text-align: center;
 	font-size: 1.5rem;
 	text-decoration: none;
+    transition: all 0.15s ease-in-out;
 }
-/* Login Button - Hover */
+.sign-up {
+	background-color: transparent;
+	border-radius: 1rem;
+    border-style: none;
+    box-shadow: inset 0 0 0 0.1rem;
+	color: var(--headers);
+	padding: 0.5rem 1.5rem;
+	text-align: center;
+	font-size: 1.5rem;
+	text-decoration: none;
+    transition: all 0.15s ease-in-out;
+}
+/* Buttons - Hover */
 .login:hover {
 	color: var(--accent);
-	box-shadow: 0 0 1rem 0rem rgba(0, 0, 0, 0.8);
+	box-shadow: inset 0 0 0 0.1rem,0 0 1rem 0rem rgba(0, 0, 0, 0.8);
+}
+.sign-up:hover {
+	color: var(--accent);
+	box-shadow: inset 0 0 0 0.1rem, 0 0 1rem 0rem rgba(0, 0, 0, 0.8);
 }
 /* Hero Image */
 .home aside {
     display: flex;
+    flex-direction: column;
     height: calc(100vh - 13.3rem);
     width: 100%;
     justify-content: center;
