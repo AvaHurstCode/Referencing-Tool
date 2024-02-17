@@ -6,8 +6,6 @@ section {
         padding-left: 1rem;
         padding-right: 1rem;
         padding-bottom: 1rem;
-        animation: shrink-top-padding linear;
-        animation-timeline: view();
         h1 {
             color: var(--accent);
             font-size: 4rem;
@@ -26,8 +24,6 @@ section {
     padding-bottom: 15%;
     text-align: center;
     text-wrap: balance;
-    animation: shrink-bottom-padding linear forwards;
-    animation-timeline: view();
     h1 {
         font-size: 7rem;
         padding-bottom: 6rem;
@@ -110,13 +106,3 @@ section {
     }
 }
 /* Animations */
-@keyframes shrink-bottom-padding {
-    to {
-        padding-bottom: 0%;
-    }
-}
-@keyframes shrink-top-padding {
-    from {
-        padding-top: 4rem;
-    }
-}
