@@ -1,0 +1,79 @@
+.background-anim {
+    position: fixed;
+    z-index: -10;
+    width: calc(100%);
+    height: calc(100vh - 1px);
+    top: 0px;
+    left: 0px;
+    overflow: clip;
+    .filter {
+        position: relative;
+        z-index: 10;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        backdrop-filter: blur(10rem);
+    }
+    .dot {
+        z-index: -11;
+        position: fixed;
+        width: 9rem;
+        height: 9rem;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        background-color: var(--headers);
+    }
+    .fast {
+        animation: dot-fast 30s infinite;
+    }
+    .medium {
+        animation: dot-medium 40s infinite;
+    }
+    .slow {
+        animation: dot-slow 60s infinite;
+    }
+}
+@keyframes dot-fast {
+    0% {
+        translate: 0vw 0vh;
+    }
+    33% {
+        translate: 100vw 70vh;
+    }
+    66% {
+        translate: 50vw 67vh;
+    }
+    100% {
+        translate: 0vw 0vh;
+    }
+}
+@keyframes dot-medium {
+    0% {
+        translate: 34vw 55vw;
+    }
+    33% {
+        translate: 0vw 17vh;
+    }
+    66% {
+        translate: 50vw 10vh;
+    }
+    100% {
+        translate: 34vw 55vw;
+    }
+}
+@keyframes dot-slow {
+    0% {
+        translate: 67vw 91vh;
+    }
+    22% {
+        translate: 35vw 100vh;
+    }
+    70% {
+        translate: 100vw 70vh;
+    }
+    100% {
+        translate: 67vw 91vh;
+    }
+}
