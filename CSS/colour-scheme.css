@@ -1,6 +1,6 @@
 :root {
 	--h: 200;
-	--s: 50%;
+	--s: 60%;
 	--background: hsl(var(--h), var(--s), 10%);
 	--headers: hsl(var(--h), var(--s), 42%);
 	--navbar: hsl(var(--h), var(--s), 6%);
